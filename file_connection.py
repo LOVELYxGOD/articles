@@ -13,3 +13,10 @@ def save_articles(name, text):
     with open("articles.json", 'w', encoding='utf-8') as file:
         json.dump(articles, file, ensure_ascii=False)
 
+def delete_article(name):
+    with open("articles.json", 'r', encoding='utf-8') as file:
+        articles = json.load(file)
+    del articles[name]
+
+    with open("articles.json", 'w', encoding='utf-8') as file:
+        json.dump(articles, file, ensure_ascii=False)
