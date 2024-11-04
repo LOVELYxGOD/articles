@@ -72,7 +72,7 @@ def add_article():
         if new_title and new_text:
             articles[new_title] = new_text
             listbox.insert(0, new_title)
-            file_connection.save_article(new_title, new_text)
+            file_connection.save_articles(new_title, new_text)
             add_window.destroy()
             show_article()
 
